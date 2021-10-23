@@ -1,0 +1,129 @@
+/* css reset */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  margin-top: 10vh !important;
+  background-color: #f4f4f4;
+  max-width: 50%;
+  margin: auto;
+  border-radius: 15px;
+  padding: 35px;
+}
+
+.add-items-container {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.add-items-container input {
+  width: 70%;
+}
+.add-items-container input,
+.add-items-container button {
+  padding: 5px;
+  padding-inline: 2px;
+}
+
+.tasks-list {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.btn-checkmark,
+.btn-outline,
+.btn-delete {
+  border: none;
+  background-color: transparent;
+}
+
+.btn-checkmark {
+  color: green;
+}
+
+.btn-outline {
+  color: blue;
+}
+
+.btn-delete-task {
+  color: red;
+}
+
+ion-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.btn-clear-item {
+  display: block;
+  margin: auto;
+  padding: 5px;
+  background-color: transparent;
+}
+
+.border-green {
+  border: 1px solid rgb(158, 241, 158);
+}
+
+.completed .task-text {
+  text-decoration: line-through;
+}
+.completed .btn-checkmark {
+  visibility: hidden;
+}
+.completed .btn-outline {
+  visibility: hidden;
+}
