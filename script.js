@@ -1,4 +1,6 @@
 "use strict";
+const formAddTask = document.querySelector(".form-add-task");
+
 const inputTask = document.querySelector(".input-add-task");
 const btnAddTask = document.querySelector(".btn-add-task");
 const taskListEl = document.querySelector(".tasks-list");
@@ -26,10 +28,16 @@ let tasksArr = [
 renderTasks();
 
 function addTask(newTask) {
-  for (let i = 0; i < tasksArr.length; i++)
+  for (let i = 0; i < tasksArr.length; i++) {
     if (tasksArr[i][0] === newTask) return alert("task already present");
-  if (newTask !== undefined && newTask !== "") tasksArr.push([newTask, 0]);
-  renderTasks();
+  }
+  if (newTask !== undefined && newTask !== "") {
+    tasksArr.push([newTask, 0]);
+    inputTask.value = "";
+    inputTask.blur();
+    renderTasks();
+    // return 1;
+  }
 }
 function renderTasks() {
   taskListEl.innerHTML = "";
@@ -39,7 +47,7 @@ function renderTasks() {
       ` ${
         tempTask[2] === 1
           ? `<form class='form-edit-task'>
-              <input type='text'class='input-edit-task' placeholder='${editTaskOldName}'>
+              <input type='text'class='input-edit-task' value='${editTaskOldName}'>
               <button class='btn-edit-task'> Edit Task</button>
             </form>
           `
@@ -139,11 +147,11 @@ function clicklistner() {
 }
 
 clearTasksBtn.addEventListener("click", (e) => (taskListEl.innerHTML = ""));
-btnAddTask.addEventListener("click", (e) => {
+
+formAddTask.addEventListener("submit", (e) => {
+  e.preventDefault();
   console.log(inputTask.value);
   addTask(inputTask.value);
-  inputTask.value = "";
-  inputTask.blur();
 });
 
 clicklistner();
