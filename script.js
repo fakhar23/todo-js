@@ -22,7 +22,7 @@ let tasksArr = [
   ["task 5", 0],
   ["task 6", 0],
 ];
-
+// ⚠️change this line to implement storing tasks in local-storage⚠️
 // loadLocalTasks();
 
 renderTasks();
